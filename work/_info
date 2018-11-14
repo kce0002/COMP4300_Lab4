@@ -95,23 +95,23 @@ R20
 R11
 R12
 Eaubie_controller
-R14
+Z28 w1542179449
 R2
 R1
 R3
-Z28 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
-Z29 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z29 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z30 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
 l0
 L5
 VYVG;_4lJ1R;^Z2YSfnOhd0
 !s100 0CbA`N3i`oY[YzTOJL39O1
 R6
 32
-Z30 !s110 1542175762
+Z31 !s110 1542179452
 !i10b 1
-Z31 !s108 1542175762.000000
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
-Z33 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z32 !s108 1542179452.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z34 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
 !i113 1
 R11
 R12
@@ -121,15 +121,15 @@ R1
 R27
 l31
 L30
-Z34 V:JfoNMFMK]Sa5I8]7o2@z3
-Z35 !s100 XRB2JaL_;nV@=2[<G`hkT0
+Z35 V:JfoNMFMK]Sa5I8]7o2@z3
+Z36 !s100 XRB2JaL_;nV@=2[<G`hkT0
 R6
 32
-R30
-!i10b 1
 R31
+!i10b 1
 R32
 R33
+R34
 !i113 1
 R11
 R12
