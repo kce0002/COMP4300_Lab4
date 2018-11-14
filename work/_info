@@ -1,0 +1,421 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+Ealu
+Z0 w1542175563
+Z1 DPx4 work 13 bv_arithmetic 0 22 ;=2SeGQPb=ziI`4efIfkn0
+Z2 DPx4 work 9 dlx_types 0 22 N;][EXI4VdHCK129TNO5`0
+Z3 dC:/Users/Kyle/Desktop/COMP4300_Lab4
+Z4 8C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd
+Z5 FC:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd
+l0
+L39
+V]iEZ]VG[`Bf3:890=zJL63
+!s100 R;Mdfo6T3lm]B5VKX22QA3
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1542175750
+!i10b 1
+Z8 !s108 1542175750.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd|
+Z10 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Abehavior
+R1
+R2
+Z13 DEx4 work 3 alu 0 22 ]iEZ]VG[`Bf3:890=zJL63
+l46
+L45
+V[zmMz^RlnYhk<:511];Vz1
+!s100 :^S?CIaahT01EikC5aU>V0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eaubie
+Z14 w1542150571
+R2
+R1
+R3
+Z15 8C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd
+Z16 FC:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd
+l0
+L6
+V4ESA;O^c<2dJh_zk:5Nng1
+!s100 ^BkcC0=[[Z=7dOM<k:9AG1
+R6
+32
+Z17 !s110 1542175759
+!i10b 1
+Z18 !s108 1542175759.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd|
+Z20 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd|
+!i113 1
+R11
+R12
+Astruct
+Z21 DEx4 work 9 pcplusone 0 22 Xd9:H=E1;2GBj]Fn6ZKM@3
+Z22 DEx4 work 12 threeway_mux 0 22 [0[kQGh6:0Z7c8`hXi^@W1
+Z23 DEx4 work 3 mux 0 22 D^Azl4Oi6mFNV<c1=C0EX0
+R13
+Z24 DEx4 work 8 reg_file 0 22 E8hO8kaVh]6T>RFUz3Pce2
+Z25 DEx4 work 12 dlx_register 0 22 8R1T[7e6L5U0e8466O:`70
+Z26 DEx4 work 6 memory 0 22 WgkPchLGO_0>oEUd<c;V;2
+Z27 DEx4 work 16 aubie_controller 0 22 YVG;_4lJ1R;^Z2YSfnOhd0
+R2
+R1
+DEx4 work 5 aubie 0 22 4ESA;O^c<2dJh_zk:5Nng1
+l41
+L10
+VgHl4mG8^Sec^Y_Z^;BCF@1
+!s100 MZFC7<1A8^U?d]0Zh3C>l3
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Eaubie_controller
+R14
+R2
+R1
+R3
+Z28 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z29 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+l0
+L5
+VYVG;_4lJ1R;^Z2YSfnOhd0
+!s100 0CbA`N3i`oY[YzTOJL39O1
+R6
+32
+Z30 !s110 1542175762
+!i10b 1
+Z31 !s108 1542175762.000000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z33 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R2
+R1
+R27
+l31
+L30
+Z34 V:JfoNMFMK]Sa5I8]7o2@z3
+Z35 !s100 XRB2JaL_;nV@=2[<G`hkT0
+R6
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R11
+R12
+Pbv_arithmetic
+R14
+R3
+8C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
+FC:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
+l0
+L15
+V;=2SeGQPb=ziI`4efIfkn0
+!s100 DK;Y`J0lJAh`j:XUgQ7B<1
+R6
+32
+b1
+!s110 1542175732
+!i10b 1
+!s108 1542175732.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd|
+!s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd|
+!i113 1
+R11
+R12
+Bbody
+R1
+8C:/Users/Kyle/Desktop/COMP4300_Lab4/bva-b.vhd
+FC:/Users/Kyle/Desktop/COMP4300_Lab4/bva-b.vhd
+l0
+L1
+VLPF@=`8X>]9I@:nc^2mYE3
+!s100 ;^d^hPQojBY3:39_Lf`ZP1
+R6
+32
+!s110 1542175737
+!i10b 1
+!s108 1542175737.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/bva-b.vhd|
+!s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/bva-b.vhd|
+!i113 1
+R11
+R12
+nbody
+Edlx_register
+R0
+R2
+R3
+R4
+R5
+l0
+L213
+V8R1T[7e6L5U0e8466O:`70
+!s100 <?bcn<gd41PamM4MZ4k^92
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavior
+R2
+R25
+l219
+L218
+VPWF5VOjcj=aDaLf9d4cQZ0
+!s100 leLW`@?S_0>W1`7N4SS;c2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Pdlx_types
+R14
+R3
+8C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd
+FC:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd
+l0
+L2
+VN;][EXI4VdHCK129TNO5`0
+!s100 E2c;:eYf;hh[jFU?F_ci41
+R6
+32
+!s110 1542175741
+!i10b 1
+!s108 1542175741.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd|
+!s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd|
+!i113 1
+R11
+R12
+Ememory
+R0
+R1
+R2
+R3
+R4
+R5
+l0
+L302
+VWgkPchLGO_0>oEUd<c;V;2
+!s100 =mO5[XfZ41H[@GX=85l>A1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+R26
+l314
+L312
+V;Z?em^^b1<TPem_@kZPUR3
+!s100 cFUg:;HnJI8Me55hKne^j1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emux
+R0
+R2
+R3
+R4
+R5
+l0
+L256
+VD^Azl4Oi6mFNV<c1=C0EX0
+!s100 kVZPN<A6bI_Ca85h_fFZk2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavior
+R2
+R23
+l262
+L261
+VH34hlUCRcdAe@WKDSh5al3
+!s100 @1NXd2WcE@e9c@KNDM2AH0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Epcplusone
+R0
+R1
+R2
+R3
+R4
+R5
+l0
+L234
+VXd9:H=E1;2GBj]Fn6ZKM@3
+!s100 KWN;Bg@Y79Ua_Ja0dS0Xh0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+R21
+l240
+L239
+VF;D]9ENlF:7l@gQj<XKfM1
+!s100 n[C:mJNCK@cEVHIJ3NZ:L1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ereg_file
+R0
+R1
+R2
+R3
+R4
+R5
+l0
+L10
+VE8hO8kaVh]6T>RFUz3Pce2
+!s100 Jl0`O8SY08I?fk3T``6Tn3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+R24
+l18
+L17
+VG_P?=CV`3X2<5_2mT2Ki<3
+!s100 2o>GN0^N4iG0>ha;`Ijjf2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ethreeway_mux
+R0
+R2
+R3
+R4
+R5
+l0
+L277
+V[0[kQGh6:0Z7c8`hXi^@W1
+!s100 LD=zMZNOcn1]A>YMe^MO50
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavior
+R2
+R22
+l283
+L282
+VTkjEzGbi;_]A]=4g49heK0
+!s100 P6E<ck45k<e`WTlO_f<EL3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
