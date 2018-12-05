@@ -3,6 +3,7 @@ use work.bv_arithmetic.all;
 use work.dlx_types.all; 
 
 entity aubie_controller is
+	generic(propDelay : time := 15 ns);
 	port(ir_control: in dlx_word;
 	     alu_out: in dlx_word; 
 	     alu_error: in error_code; 
@@ -44,6 +45,25 @@ begin
 		   case state is
 			when 1 => -- fetch the instruction, for all types
 				-- your code goes here
+
+				-- Handle clocks and multiplexers and etc.:
+				-- fetching (reading) from memory, not register file
+				mem_readnotwrite <= '1' after propDelay; -- reading from memory, not writing
+
+				memaddr_mux <= "00" after propDelay; -- could be the wrong mux code -> need to test
+				addr_mux <= '1' after propDelay; -- mux code for mem_out path
+				
+				imm_clk <= '0' after propDelay; -- immediate register not used here
+				addr_clk <= '0' after propDelay; -- addr register not used here
+				pc_clk <= '0' after propDelay; -- want to use current pc value
+				op1_clk <= '0' after propDelay; -- no operation in this state
+				op2_clk <= '0' after propDelay; -- no operation in this state				
+				result_clk <= '0' after propDelay; -- no operation in this state
+				regfile_clk <= '0' after propDelay; -- register file not used here
+				mem_clk <= '1' after propDelay; -- 1 -> so it can be read
+				ir_clk <= '1' after propDelay; -- needs to be 1 so it can have mem[pc]
+				
+
 				state := 2; 
 			when 2 =>  
 				
@@ -51,12 +71,22 @@ begin
 			 	if opcode(7 downto 4) = "0000" then -- ALU op
 					state := 3; 
 				elsif opcode = X"20" then  -- STO 
+					-- my code
+					state := 9;
 				elsif opcode = X"30" or opcode = X"31" then -- LD or LDI
 					state := 7;
 				elsif opcode = X"22" then -- STOR
+					-- my code
+					state := 14;
 				elsif opcode = X"32" then -- LDR
+					-- my code
+					state := 12;
 				elsif opcode = X"40" or opcode = X"41" then -- JMP or JZ
+					-- my code
+					state := 16;
 				elsif opcode = X"10" then -- NOOP
+					-- my code
+					state := 19;
 				else -- error
 				end if; 
 			when 3 => 
