@@ -91,20 +91,54 @@ begin
 				end if; 
 			when 3 => 
 				-- ALU op:  load op1 register from the regfile
-				-- your code here 
+				-- your code here
+				-- operand1 variable is an index value*****
+
+				regfile_index <= operand1 after propDelay; 
+
+				regfile_readnotwrite <= '1' after propDelay; -- reading from reg file
+
+				-- clocks: only op1_clk and regfile_clk are 1 since they're used, everything else is 0
+				regfile_clk <= '1' after propDelay;
+				op1_clk <= '1' after propDelay;
+				mem_clk <= '0' after propDelay; -- memory not used here
+				ir_clk <= '0' after propDelay; -- instr register not used here
+				imm_clk <= '0' after propDelay; -- imm reg not used here
+				addr_clk <= '0' after propDelay; -- addr reg not used here
+				pc_clk <= '0' after propDelay; -- pc not used here
+				op2_clk <= '0' after propDelay; -- op2 not used here (used in the next state)
+				result_clk <= '0' after propDelay; -- result not yet used
+				
 				state := 4; 
 			when 4 => 
 				-- ALU op: load op2 registear from the regfile 
 				-- your code here
-         	state := 5; 
+				-- operand2 variable is an index value*****
+				
+				regfile_index <= operand2 after propDelay;
+
+				regfile_readnotwrite <= '1' after propDelay; -- reading from the reg file
+
+				-- clocks: only op2_clk and regfile_clk are 1 since they're used, everything else is 0
+				regfile_clk <= '1' after propDelay;
+				op2_clk <= '1' after propDelay;
+				mem_clk <= '0' after propDelay; -- memory not used here
+				ir_clk <= '0' after propDelay; -- instr register not used here
+				imm_clk <= '0' after propDelay; -- imm reg not used here
+				addr_clk <= '0' after propDelay; -- addr reg not used here
+				pc_clk <= '0' after propDelay; -- pc not used here
+				op1_clk <= '0' after propDelay; -- op2 not used here (used in the next state)
+				result_clk <= '0' after propDelay; -- result not yet used
+	
+         			state := 5; 
 			when 5 => 
 				-- ALU op:  perform ALU operation
 				-- your code here
-            state := 6; 
+            			state := 6; 
 			when 6 => 
 				-- ALU op: write back ALU operation
 				-- your code here
-            state := 1; 
+            			state := 1; 
 			when 7 => 
 				-- LD or LDI: get the addr or immediate word
 			   -- your code here 
@@ -112,7 +146,7 @@ begin
 			when 8 => 
 				-- LD or LDI
 				-- your code here
-        		state := 1; 
+        			state := 1; 
 			when others => null; 
 		   end case; 
 		elsif clock'event and clock = '0' then

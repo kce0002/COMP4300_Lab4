@@ -76,7 +76,7 @@ R13
 Z24 DEx4 work 8 reg_file 0 22 E8hO8kaVh]6T>RFUz3Pce2
 Z25 DEx4 work 12 dlx_register 0 22 8R1T[7e6L5U0e8466O:`70
 Z26 DEx4 work 6 memory 0 22 WgkPchLGO_0>oEUd<c;V;2
-Z27 DEx4 work 16 aubie_controller 0 22 YVG;_4lJ1R;^Z2YSfnOhd0
+DEx4 work 16 aubie_controller 0 22 YVG;_4lJ1R;^Z2YSfnOhd0
 R2
 R1
 DEx4 work 5 aubie 0 22 4ESA;O^c<2dJh_zk:5Nng1
@@ -95,41 +95,41 @@ R20
 R11
 R12
 Eaubie_controller
-Z28 w1543986241
+Z27 w1543987081
 R2
 R1
 R3
-Z29 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
-Z30 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z28 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z29 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
 l0
 L5
 Vdd2olBXOMOOdCDhe4on7k0
 !s100 ?dR^FJ@EaC;KZhK[YMc`W3
 R6
 32
-Z31 !s110 1543986245
+Z30 !s110 1543987086
 !i10b 1
-Z32 !s108 1543986245.000000
-Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
-Z34 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z31 !s108 1543987086.000000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z33 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
 !i113 1
 R11
 R12
 Abehavior
 R2
 R1
-DEx4 work 16 aubie_controller 0 22 dd2olBXOMOOdCDhe4on7k0
+Z34 DEx4 work 16 aubie_controller 0 22 dd2olBXOMOOdCDhe4on7k0
 l32
 L31
-V8<98?:QJ0?LL]FfaONOCZ1
-!s100 FY04fAAJYLTB@T4fV;Ig`3
+VZ7@Z1Aek199=7?EG56h9L2
+!s100 Al1`T4aMle_Z`a02NMPB42
 R6
 32
-R31
+R30
 !i10b 1
+R31
 R32
 R33
-R34
 !i113 1
 R11
 R12
