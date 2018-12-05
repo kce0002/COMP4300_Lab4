@@ -134,10 +134,44 @@ begin
 			when 5 => 
 				-- ALU op:  perform ALU operation
 				-- your code here
+
+				alu_func <= opcode(3 downto 0) after propDelay; -- **** i think this is the correct partition of the opcode -> waiting for Dr. Chapman email response
+				
+				-- Only using result here:
+				result_clk <= '1' after propDelay;
+				regfile_clk <= '0' after propDelay;
+				mem_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				pc_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				
             			state := 6; 
 			when 6 => 
 				-- ALU op: write back ALU operation
 				-- your code here
+
+				-- Now that the instruction has been performed and written back, use pcplusone
+
+				regfile_readnotwrite <= '0' after propDelay; -- done reading regfile, writing now
+
+				-- Multiplexers:
+				pc_mux <= '0' after propDelay;
+				regfilein_mux <= "00" after propDelay;
+
+				-- Clocks:
+				pc_clk <= '1' after propDelay; -- pcplusone
+				regfile_clk <= '1' after propDelay; -- writing to regfile
+				mem_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
             			state := 1; 
 			when 7 => 
 				-- LD or LDI: get the addr or immediate word
