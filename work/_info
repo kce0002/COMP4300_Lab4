@@ -95,7 +95,7 @@ R20
 R11
 R12
 Eaubie_controller
-Z27 w1543990381
+Z27 w1544056551
 R2
 R1
 R3
@@ -107,9 +107,9 @@ Vdd2olBXOMOOdCDhe4on7k0
 !s100 ?dR^FJ@EaC;KZhK[YMc`W3
 R6
 32
-Z30 !s110 1543990385
+Z30 !s110 1544056566
 !i10b 1
-Z31 !s108 1543990385.000000
+Z31 !s108 1544056566.000000
 Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
 Z33 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
 !i113 1
@@ -121,8 +121,8 @@ R1
 Z34 DEx4 work 16 aubie_controller 0 22 dd2olBXOMOOdCDhe4on7k0
 l32
 L31
-V1niA3_JBEjUdodd@9kk831
-!s100 2lV>]GN72_;@<5V^?D2R93
+VP;UKlmfZ<m`[1_m^_kJ1L2
+!s100 bEdTm1@]R2KA]aKB5X1WZ2
 R6
 32
 R30

@@ -4,14 +4,6 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling package body bv_arithmetic
 -- Loading package bv_arithmetic
 
-} {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Loading package bv_arithmetic
--- Loading package dlx_types
--- Compiling entity aubie_controller
--- Compiling architecture behavior of aubie_controller
-
 } {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD

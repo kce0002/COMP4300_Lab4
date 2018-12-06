@@ -158,8 +158,8 @@ begin
 				regfile_readnotwrite <= '0' after propDelay; -- done reading regfile, writing now
 
 				-- Multiplexers:
-				pc_mux <= "00" after propDelay;
-				regfilein_mux <= '0' after propDelay;
+				pc_mux <= '0' after propDelay;
+				regfilein_mux <= "00" after propDelay;
 
 				-- Clocks:
 				pc_clk <= '1' after propDelay; -- pcplusone
@@ -175,17 +175,81 @@ begin
             			state := 1; 
 			when 7 => 
 				-- LD or LDI: get the addr or immediate word
-			   -- your code here 
+			   	-- your code here 
+
+				-- LD -> X30, LDI -> X31
+				-- Both cases:
+				mem_readnotwrite <= '1' after propDelay;
+
+				-- Multiplexers:
+				pc_mux <= '0' after propDelay;
+				memaddr_mux <= "00" after propDelay;
+
+				-- Clocks:
+				pc_clk <= '1' after propDelay;
+				mem_clk <= '1' after propDelay;
+				regfile_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
+				if opcode = X"30" then
+					-- Multiplexers:
+					addr_mux <= '1' after propDelay;
+						
+					-- Clocks:					
+					addr_clk <= '1' after propDelay;
+					imm_clk <= '0' after propDelay;
+				else
+					-- Clocks:
+					imm_clk <= '1' after propDelay;
+					addr_clk <= '0' after propDelay;
+				end if;
 				state := 8; 
 			when 8 => 
 				-- LD or LDI
 				-- your code here
+				
+				-- Destination is a register index*****
+				-- Both cases:
+				regfile_index <= destination after propDelay;
+				regfile_readnotwrite <= '0' after propDelay;
+				pc_mux <= '0' after propDelay;
+				regfile_clk <= '1' after propDelay;
+				ir_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				pc_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
+				if opcode = X"30" then
+					mem_readnotwrite <= '1' after propDelay;
+
+					-- Multiplexers:
+					memaddr_mux <= "01" after propDelay;
+					regfilein_mux <= "01" after propDelay;
+					
+					-- Clocks:
+					mem_clk <= '1' after propDelay;
+					imm_clk <= '0' after propDelay;
+
+					
+				else
+					-- Multiplexers:
+					regfilein_mux <= "10" after propDelay;
+					
+					-- Clocks:
+					imm_clk <= '1' after propDelay;
+					mem_clk <= '0' after propDelay;
+				end if;
         			state := 1; 
 			when others => null; 
 		   end case; 
 		elsif clock'event and clock = '0' then
 			-- reset all the register clocks
-		   -- your code here				
+		   	-- your code here				
 		end if; 
 	end process behav;
 end behavior;	
