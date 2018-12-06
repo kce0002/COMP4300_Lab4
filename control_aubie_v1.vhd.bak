@@ -215,7 +215,9 @@ begin
 				-- Both cases:
 				regfile_index <= destination after propDelay;
 				regfile_readnotwrite <= '0' after propDelay;
+
 				pc_mux <= '0' after propDelay;
+
 				regfile_clk <= '1' after propDelay;
 				ir_clk <= '0' after propDelay;
 				addr_clk <= '0' after propDelay;
@@ -234,8 +236,6 @@ begin
 					-- Clocks:
 					mem_clk <= '1' after propDelay;
 					imm_clk <= '0' after propDelay;
-
-					
 				else
 					-- Multiplexers:
 					regfilein_mux <= "10" after propDelay;

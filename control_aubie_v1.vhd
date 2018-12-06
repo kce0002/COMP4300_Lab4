@@ -249,7 +249,16 @@ begin
 		   end case; 
 		elsif clock'event and clock = '0' then
 			-- reset all the register clocks
-		   	-- your code here				
+		   	-- your code here		
+			regfile_clk <= '0' after propDelay;
+			mem_clk <= '0' after propDelay;
+			ir_clk <= '0' after propDelay;
+			imm_clk <= '0' after propDelay;
+			addr_clk <= '0' after propDelay;
+			pc_clk <= '0' after propDelay;
+			op1_clk <= '0' after propDelay;
+			op2_clk <= '0' after propDelay;
+			result_clk <= '0' after propDelay;		
 		end if; 
 	end process behav;
 end behavior;	
