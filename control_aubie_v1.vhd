@@ -180,15 +180,15 @@ begin
 
 				-- LD -> X30, LDI -> X31
 				-- Both cases:
-				mem_readnotwrite <= '1' after propDelay;
+				mem_readnotwrite <= '1' after propDelay; 
 
 				-- Multiplexers:
-				pc_mux <= "00" after propDelay;
-				memaddr_mux <= "00" after propDelay;
+				pc_mux <= "00" after propDelay; -- pcplusone
+				memaddr_mux <= "00" after propDelay; -- pc
 
 				-- Clocks:
-				pc_clk <= '1' after propDelay;
-				mem_clk <= '1' after propDelay;
+				pc_clk <= '1' after propDelay; -- pc
+				mem_clk <= '1' after propDelay; -- reading from memory
 				regfile_clk <= '0' after propDelay;
 				ir_clk <= '0' after propDelay;
 				op1_clk <= '0' after propDelay;
@@ -197,14 +197,14 @@ begin
 
 				if opcode = X"30" then
 					-- Multiplexers:
-					addr_mux <= '1' after propDelay;
+					addr_mux <= '1' after propDelay; -- use memory path
 						
 					-- Clocks:					
-					addr_clk <= '1' after propDelay;
+					addr_clk <= '1' after propDelay; -- addr reg 
 					imm_clk <= '0' after propDelay;
 				else
 					-- Clocks:
-					imm_clk <= '1' after propDelay;
+					imm_clk <= '1' after propDelay; -- activate imm reg
 					addr_clk <= '0' after propDelay;
 				end if;
 				state := 8; 
@@ -214,12 +214,12 @@ begin
 				
 				-- Destination is a register index*****
 				-- Both cases:
-				regfile_index <= destination after propDelay;
-				regfile_readnotwrite <= '0' after propDelay;
+				regfile_index <= destination after propDelay; -- destination goes into regfile_index
+				regfile_readnotwrite <= '0' after propDelay; -- writing to regfile
 
-				pc_mux <= "00" after propDelay;
+				pc_mux <= "00" after propDelay; -- pcplusone
 
-				regfile_clk <= '1' after propDelay;
+				regfile_clk <= '1' after propDelay; -- writing to regfile
 				ir_clk <= '0' after propDelay;
 				addr_clk <= '0' after propDelay;
 				pc_clk <= '0' after propDelay;
@@ -228,25 +228,27 @@ begin
 				result_clk <= '0' after propDelay;
 
 				if opcode = X"30" then
-					mem_readnotwrite <= '1' after propDelay;
+					mem_readnotwrite <= '1' after propDelay; -- reading from memory
 
 					-- Multiplexers:
-					memaddr_mux <= "01" after propDelay;
-					regfilein_mux <= "01" after propDelay;
+					memaddr_mux <= "01" after propDelay; -- addr reg wire
+					regfilein_mux <= "01" after propDelay; -- memory wire
 					
 					-- Clocks:
-					mem_clk <= '1' after propDelay;
-					imm_clk <= '0' after propDelay;
+					mem_clk <= '1' after propDelay; -- reading from memory
+					imm_clk <= '0' after propDelay; -- LD, not LDI
 				else
 					-- Multiplexers:
-					regfilein_mux <= "10" after propDelay;
+					regfilein_mux <= "10" after propDelay; -- imm wire
 					
 					-- Clocks:
-					imm_clk <= '1' after propDelay;
-					mem_clk <= '0' after propDelay;
+					imm_clk <= '1' after propDelay; -- immediate register wire
+					mem_clk <= '0' after propDelay; -- LDI, not LD
 				end if;
         			state := 1; 
 			when 9 =>
+				-- Only using pcplusone in this state:
+
 				pc_mux <= "00" after propDelay;
 				pc_clk <= '1' after propDelay;
 
@@ -265,15 +267,15 @@ begin
 			when 10 =>
 				-- Mem[PC] -> Addr
 
-				mem_readnotwrite <= '1' after propDelay;
+				mem_readnotwrite <= '1' after propDelay; -- reading from memory
 
 				-- Multiplexers:
-				memaddr_mux <= "00" after propDelay;
-				addr_mux <= '1' after propDelay;
+				memaddr_mux <= "00" after propDelay; -- pc wire
+				addr_mux <= '1' after propDelay; -- mem wire
 				
 				-- Clocks:
-				mem_clk <= '1' after propDelay;
-				addr_clk <= '1' after propDelay;
+				mem_clk <= '1' after propDelay; -- reading from memory
+				addr_clk <= '1' after propDelay; -- writing to addr
 				regfile_clk <= '0' after propDelay;
 				ir_clk <= '0' after propDelay;
 				imm_clk <= '0' after propDelay;
@@ -285,20 +287,20 @@ begin
 				state := 11;
 
 			when 11 =>
-				regfile_readnotwrite <= '1' after propDelay;
-				mem_readnotwrite <= '0' after propDelay;
+				regfile_readnotwrite <= '1' after propDelay; -- reading from regfile
+				mem_readnotwrite <= '0' after propDelay; -- writing to memory
 				
 				-- operand1 is the source here
 				regfile_index <= operand1 after propDelay;
 
 				-- Multiplexers:
-				memaddr_mux <= "00" after propDelay;
-				pc_mux <= "01" after propDelay;
+				memaddr_mux <= "00" after propDelay; -- pc wire
+				pc_mux <= "01" after propDelay; -- addr wire
 
 				-- Clocks:
-				regfile_clk <= '1' after propDelay;
-				mem_clk <= '1' after propDelay;
-				pc_clk <= '1' after propDelay;
+				regfile_clk <= '1' after propDelay; -- reading from regfile
+				mem_clk <= '1' after propDelay; -- writing to memory
+				pc_clk <= '1' after propDelay; -- reading pc value
 				ir_clk <= '0' after propDelay;
 				imm_clk <= '0' after propDelay;
 				addr_clk <= '0' after propDelay;
@@ -309,19 +311,19 @@ begin
 				state := 1;
 
 			when 12 => 
-				regfile_readnotwrite <= '1' after propDelay;
-				regfile_index <= operand1 after propDelay;
+				regfile_readnotwrite <= '1' after propDelay; -- reading from regfile
+				regfile_index <= operand1 after propDelay; -- syntax: register index is operand1
 
 				-- Multiplexers:
-				addr_mux <= '0' after propDelay;
+				addr_mux <= '0' after propDelay; -- regfile wire
 				
 				-- Clocks:
-				regfile_clk <= '1' after propDelay;
-				addr_clk <= '1' after propDelay;
+				regfile_clk <= '1' after propDelay; -- reading from regfile
+				addr_clk <= '1' after propDelay; -- writing to addr
 				mem_clk <= '0' after propDelay;
 				ir_clk <= '0' after propDelay;
 				imm_clk <= '0' after propDelay;
-				pc_clk <= '0' after propDelay;
+ 				pc_clk <= '0' after propDelay;
 				op1_clk <= '0' after propDelay;
 				op2_clk <= '0' after propDelay;
 				result_clk <= '0' after propDelay;
@@ -329,19 +331,19 @@ begin
 				state := 13;
 
 			when 13 =>
-				mem_readnotwrite <= '1' after propDelay;
-				regfile_readnotwrite <= '0' after propDelay;
-				regfile_index <= destination after propDelay;
+				mem_readnotwrite <= '1' after propDelay; -- reading from memory
+				regfile_readnotwrite <= '0' after propDelay; -- writing to regfile
+				regfile_index <= destination after propDelay; -- destination is the index here
 
 				-- Multiplexers:
-				regfilein_mux <= "01" after propDelay;
-				memaddr_mux <= "01" after propDelay;
-				pc_mux <= "00" after propDelay;
+				regfilein_mux <= "01" after propDelay; -- mem wire
+				memaddr_mux <= "01" after propDelay; -- addr wire
+				pc_mux <= "00" after propDelay; -- pcplusone
 				
 				-- Clocks:
-				mem_clk <= '1' after propDelay;
-				regfile_clk <= '1' after propDelay;
-				pc_clk <= '1' after propDelay;
+				mem_clk <= '1' after propDelay; -- reading from memory
+				regfile_clk <= '1' after propDelay; -- writing to regfile
+				pc_clk <= '1' after propDelay; -- increment PC
 				ir_clk <= '0' after propDelay;
 				imm_clk <= '0' after propDelay;
 				addr_clk <= '0' after propDelay;
@@ -352,15 +354,15 @@ begin
 				state := 1;
 
 			when 14 =>
-				regfile_readnotwrite <= '1' after propDelay;
-				regfile_index <= destination after propDelay;
+				regfile_readnotwrite <= '1' after propDelay; -- reading from regfile
+				regfile_index <= destination after propDelay; -- destination is the index here
 
 				-- Multiplexers:
-				addr_mux <= '0' after propDelay;								
+				addr_mux <= '0' after propDelay; -- regfile wire								
 
 				-- Clocks:
-				regfile_clk <= '1' after propDelay;
-				addr_clk <= '1' after propDelay;
+				regfile_clk <= '1' after propDelay; -- reading from regfile
+				addr_clk <= '1' after propDelay; -- writing to addr reg
 				mem_clk <= '0' after propDelay;
 				ir_clk <= '0' after propDelay;
 				imm_clk <= '0' after propDelay;
@@ -372,18 +374,18 @@ begin
 				state := 15;
 
 			when 15 =>
-				regfile_readnotwrite <= '1' after propDelay;
-				mem_readnotwrite <= '0' after propDelay;
-				regfile_index <= operand1 after propDelay;
+				regfile_readnotwrite <= '1' after propDelay; -- reading from regfile
+				mem_readnotwrite <= '0' after propDelay; -- writing to memory
+				regfile_index <= operand1 after propDelay; -- index is operand1 here
 
 				-- Multiplexers:
-				memaddr_mux <= "00" after propDelay;
-				pc_mux <= "01" after propDelay;
+				memaddr_mux <= "01" after propDelay; -- addr wire
+				pc_mux <= "00" after propDelay; -- pcplusone
 
 				-- Clocks:
-				regfile_clk <= '1' after propDelay;
-				mem_clk <= '1' after propDelay;
-				pc_clk <= '1' after propDelay;
+				regfile_clk <= '1' after propDelay; -- reading from regfile
+				mem_clk <= '1' after propDelay; -- writing to mem
+				pc_clk <= '1' after propDelay; -- pcplusone
 				ir_clk <= '0' after propDelay;
 				imm_clk <= '0' after propDelay;
 				addr_clk <= '0' after propDelay;
@@ -394,6 +396,7 @@ begin
 				state := 1;
 			
 			when 16 =>
+				-- STATES 16-18 for JMP/JZ are incomplete, couldn't figure them out.
 				pc_mux <= "00" after propDelay;
 				pc_clk <= '1' after propDelay;
 

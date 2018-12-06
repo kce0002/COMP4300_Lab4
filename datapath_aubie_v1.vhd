@@ -341,6 +341,7 @@ begin  -- behavior
     data_memory(0) :=  X"30200000"; --LD R4, 0x100
     data_memory(1) :=  X"00000100"; -- address 0x100 for previous instruction
     data_memory(2) :=  "00000000000110000100010000000000"; -- ADDU R3,R1,R2
+    data_memory(3) :=  X"00088300"; -- NOTB R7, R8, R9 -> me testing other instruction
     -- some data
     -- note that this code runs every time an input signal to memory changes, 
     -- so for testing, write to some other locations besides these
