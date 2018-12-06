@@ -245,6 +245,99 @@ begin
 					mem_clk <= '0' after propDelay;
 				end if;
         			state := 1; 
+			when 9 =>
+				pc_mux <= '0' after propDelay;
+				pc_clk <= '1' after propDelay;
+
+				-- everything else low:
+				regfile_clk <= '0' after propDelay;
+				mem_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
+				state := 10;
+
+			when 10 =>
+				-- Mem[PC] -> Addr
+
+				mem_readnotwrite <= '1' after propDelay;
+
+				-- Multiplexers:
+				memaddr_mux <= "00" after propDelay;
+				addr_mux <= '1' after propDelay;
+				
+				-- Clocks:
+				mem_clk <= '1' after propDelay;
+				addr_clk <= '1' after propDelay;
+				regfile_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				pc_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
+				state := 11;
+
+			when 11 =>
+				regfile_readnotwrite <= '1' after propDelay;
+				mem_readnotwrite <= '0' after propDelay;
+				
+				-- operand1 is the source here
+				regfile_index <= operand1 after propDelay;
+
+				-- Multiplexers:
+				memaddr_mux <= "00" after propDelay;
+				pc_mux <= '1' after propDelay;
+
+				-- Clocks:
+				regfile_clk <= '1' after propDelay;
+				mem_clk <= '1' after propDelay;
+				pc_clk <= '1' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
+				state := 1;
+
+			when 12 => 
+				
+				state := 13;
+
+			when 13 =>
+
+				state := 1;
+
+			when 14 =>
+
+				state := 15;
+
+			when 15 =>
+
+				state := 1;
+			
+			when 16 =>
+
+				state := 17;
+
+			when 17 =>
+
+				state := 18;
+
+			when 18 =>
+
+				state := 1;
+
+			when 19 =>
+
+				state := 1;
 			when others => null; 
 		   end case; 
 		elsif clock'event and clock = '0' then
