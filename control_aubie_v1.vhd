@@ -112,7 +112,7 @@ begin
 				
 				state := 4; 
 			when 4 => 
-				-- ALU op: load op2 registear from the regfile 
+				-- ALU op: load op2 register from the regfile 
 				-- your code here
 				-- operand2 variable is an index value*****
 				
@@ -394,14 +394,53 @@ begin
 				state := 1;
 			
 			when 16 =>
+				pc_mux <= "00" after propDelay;
+				pc_clk <= '1' after propDelay;
+
+				-- everything else low:
+				regfile_clk <= '0' after propDelay;
+				mem_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
 
 				state := 17;
 
 			when 17 =>
+				-- Mem[PC] -> Addr
+
+				mem_readnotwrite <= '1' after propDelay;
+
+				-- Multiplexers:
+				memaddr_mux <= "00" after propDelay;
+				addr_mux <= '1' after propDelay;
+				
+				-- Clocks:
+				mem_clk <= '1' after propDelay;
+				addr_clk <= '1' after propDelay;
+				regfile_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				pc_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
+
+				if opcode = X"41" then
+					
+				end if;
 
 				state := 18;
 
 			when 18 =>
+				if opcode = X"40" then
+
+				else
+					-- check if operand1 is 0
+				end if;
 
 				state := 1;
 
