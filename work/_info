@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
 Ealu
-Z0 w1542175563
+Z0 w1544071995
 Z1 DPx4 work 13 bv_arithmetic 0 22 ;=2SeGQPb=ziI`4efIfkn0
 Z2 DPx4 work 9 dlx_types 0 22 N;][EXI4VdHCK129TNO5`0
 Z3 dC:/Users/Kyle/Desktop/COMP4300_Lab4
@@ -21,9 +21,9 @@ V]iEZ]VG[`Bf3:890=zJL63
 !s100 R;Mdfo6T3lm]B5VKX22QA3
 Z6 OP;C;10.4a;61
 32
-Z7 !s110 1542175750
+Z7 !s110 1544072333
 !i10b 1
-Z8 !s108 1542175750.000000
+Z8 !s108 1544072333.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd|
 Z10 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd|
 !i113 1
@@ -48,7 +48,7 @@ R10
 R11
 R12
 Eaubie
-Z14 w1542150571
+Z14 w1544072411
 R2
 R1
 R3
@@ -60,9 +60,9 @@ V4ESA;O^c<2dJh_zk:5Nng1
 !s100 ^BkcC0=[[Z=7dOM<k:9AG1
 R6
 32
-Z17 !s110 1542175759
+Z17 !s110 1544072417
 !i10b 1
-Z18 !s108 1542175759.000000
+Z18 !s108 1544072417.000000
 Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd|
 Z20 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd|
 !i113 1
@@ -70,20 +70,20 @@ R11
 R12
 Astruct
 Z21 DEx4 work 9 pcplusone 0 22 Xd9:H=E1;2GBj]Fn6ZKM@3
-Z22 DEx4 work 12 threeway_mux 0 22 [0[kQGh6:0Z7c8`hXi^@W1
-Z23 DEx4 work 3 mux 0 22 D^Azl4Oi6mFNV<c1=C0EX0
+Z22 DEx4 work 12 threeway_mux 0 22 UQNoLT^z4ZWSn3M5`zIWQ2
+Z23 DEx4 work 3 mux 0 22 Y=CRb]hk8>?PPbAa0VA3m0
 R13
 Z24 DEx4 work 8 reg_file 0 22 E8hO8kaVh]6T>RFUz3Pce2
 Z25 DEx4 work 12 dlx_register 0 22 8R1T[7e6L5U0e8466O:`70
-Z26 DEx4 work 6 memory 0 22 WgkPchLGO_0>oEUd<c;V;2
-DEx4 work 16 aubie_controller 0 22 YVG;_4lJ1R;^Z2YSfnOhd0
+Z26 DEx4 work 6 memory 0 22 0VDJ^JU8Q83EiB:FEkGbM3
+Z27 DEx4 work 16 aubie_controller 0 22 6D[zc`0J`ScOdo<7X1E?U2
 R2
 R1
 DEx4 work 5 aubie 0 22 4ESA;O^c<2dJh_zk:5Nng1
-l41
+l48
 L10
-VgHl4mG8^Sec^Y_Z^;BCF@1
-!s100 MZFC7<1A8^U?d]0Zh3C>l3
+VGUj_dnEJ9XM_;?a6lBQ8]1
+!s100 dhSA[8N<76hgIR_FgCceT2
 R6
 32
 R17
@@ -95,46 +95,46 @@ R20
 R11
 R12
 Eaubie_controller
-Z27 w1544069103
+Z28 w1544072507
 R2
 R1
 R3
-Z28 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
-Z29 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z29 8C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
+Z30 FC:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd
 l0
 L5
-Vdd2olBXOMOOdCDhe4on7k0
-!s100 ?dR^FJ@EaC;KZhK[YMc`W3
+V6D[zc`0J`ScOdo<7X1E?U2
+!s100 WOgG_WY2LG6oJEH]DkE042
 R6
 32
-Z30 !s110 1544070024
+Z31 !s110 1544072513
 !i10b 1
-Z31 !s108 1544070023.000000
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
-Z33 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z32 !s108 1544072513.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
+Z34 !s107 C:/Users/Kyle/Desktop/COMP4300_Lab4/control_aubie_v1.vhd|
 !i113 1
 R11
 R12
 Abehavior
 R2
 R1
-Z34 DEx4 work 16 aubie_controller 0 22 dd2olBXOMOOdCDhe4on7k0
-l32
-L31
-VC6a3c=4c^>L<4=]WhV9<j1
-!s100 [5CfETI9g4CRO2Sc]Z[dF3
+R27
+l33
+L32
+V09:A325mHFY5zHHE<C4R`2
+!s100 3DQ:<EZ[SKR>JGUPCS1Lf2
 R6
 32
-R30
-!i10b 1
 R31
+!i10b 1
 R32
 R33
+R34
 !i113 1
 R11
 R12
 Pbv_arithmetic
-R14
+Z35 w1542150571
 R3
 8C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
 FC:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
@@ -210,7 +210,7 @@ R10
 R11
 R12
 Pdlx_types
-R14
+R35
 R3
 8C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd
 FC:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd
@@ -236,9 +236,9 @@ R3
 R4
 R5
 l0
-L302
-VWgkPchLGO_0>oEUd<c;V;2
-!s100 =mO5[XfZ41H[@GX=85l>A1
+L319
+V0VDJ^JU8Q83EiB:FEkGbM3
+!s100 AL94Rn?W_5AbQ=AbV``R[0
 R6
 32
 R7
@@ -253,10 +253,10 @@ Abehavior
 R1
 R2
 R26
-l314
-L312
-V;Z?em^^b1<TPem_@kZPUR3
-!s100 cFUg:;HnJI8Me55hKne^j1
+l331
+L329
+VL;R`E^gHSJ2e3hIA[0=9i1
+!s100 =o@VOOTFG?^C>PKWg>:?K3
 R6
 32
 R7
@@ -274,9 +274,9 @@ R3
 R4
 R5
 l0
-L256
-VD^Azl4Oi6mFNV<c1=C0EX0
-!s100 kVZPN<A6bI_Ca85h_fFZk2
+L261
+VY=CRb]hk8>?PPbAa0VA3m0
+!s100 5VmJC3ZHdXQaH@h8Dh@GE1
 R6
 32
 R7
@@ -290,10 +290,10 @@ R12
 Abehavior
 R2
 R23
-l262
-L261
-VH34hlUCRcdAe@WKDSh5al3
-!s100 @1NXd2WcE@e9c@KNDM2AH0
+l267
+L266
+VU^@2=Q5oj9KNOmWS:Z[OX1
+!s100 L7IV5;3z0^WVg;Bl0ZUn00
 R6
 32
 R7
@@ -389,9 +389,9 @@ R3
 R4
 R5
 l0
-L277
-V[0[kQGh6:0Z7c8`hXi^@W1
-!s100 LD=zMZNOcn1]A>YMe^MO50
+L294
+VUQNoLT^z4ZWSn3M5`zIWQ2
+!s100 6CR_;3^CAlhSCkOVWzBbQ3
 R6
 32
 R7
@@ -405,10 +405,10 @@ R12
 Abehavior
 R2
 R22
-l283
-L282
-VTkjEzGbi;_]A]=4g49heK0
-!s100 P6E<ck45k<e`WTlO_f<EL3
+l300
+L299
+VgJIUhSbMDIjLc=`7jJ7U31
+!s100 P7DYG:7<^gb71j:E65CD>1
 R6
 32
 R7

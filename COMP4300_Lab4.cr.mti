@@ -4,12 +4,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling package body bv_arithmetic
 -- Loading package bv_arithmetic
 
-} {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Compiling package bv_arithmetic
-
-} {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd
+} {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package bv_arithmetic
@@ -17,18 +12,22 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity aubie
 -- Compiling architecture struct of aubie
 -- Loading entity aubie_controller
+** Error: C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd(58): Signal "pc_mux" is type work.dlx_types.threeway_muxcode; expecting type std.STANDARD.BIT.
 -- Loading entity memory
 -- Loading entity dlx_register
 -- Loading entity reg_file
 -- Loading entity alu
 -- Loading entity mux
 -- Loading entity threeway_mux
--- Loading entity pcplusone
+** Error: C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd(151): (vcom-1035) Formal port "input_2" has OPEN or no actual associated with it.
 
-} {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd
+-- Loading entity pcplusone
+** Error: C:/Users/Kyle/Desktop/COMP4300_Lab4/interconnect_aubie.vhd(175): VHDL Compiler exiting
+
+} {9.0 10.0 16.0 17.0 19.0 20.0} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/bva.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
--- Compiling package dlx_types
+-- Compiling package bv_arithmetic
 
 } {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/datapath_aubie_v1.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
@@ -49,5 +48,10 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling architecture behavior of threeway_mux
 -- Compiling entity memory
 -- Compiling architecture behavior of memory
+
+} {} {}} C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Kyle/Desktop/COMP4300_Lab4/dlx-types.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Compiling package dlx_types
 
 } {} {}}

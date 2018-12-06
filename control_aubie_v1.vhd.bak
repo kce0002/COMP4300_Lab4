@@ -11,7 +11,8 @@ entity aubie_controller is
 	     regfilein_mux: out threeway_muxcode; 
 	     memaddr_mux: out threeway_muxcode; 
 	     addr_mux: out bit; 
-	     pc_mux: out bit; 
+	     --pc_mux: out bit; 
+	     pc_mux: out threeway_muxcode;
 	     alu_func: out alu_operation_code; 
 	     regfile_index: out register_index;
 	     regfile_readnotwrite: out bit; 
@@ -158,7 +159,7 @@ begin
 				regfile_readnotwrite <= '0' after propDelay; -- done reading regfile, writing now
 
 				-- Multiplexers:
-				pc_mux <= '0' after propDelay;
+				pc_mux <= "00" after propDelay;
 				regfilein_mux <= "00" after propDelay;
 
 				-- Clocks:
@@ -182,7 +183,7 @@ begin
 				mem_readnotwrite <= '1' after propDelay;
 
 				-- Multiplexers:
-				pc_mux <= '0' after propDelay;
+				pc_mux <= "00" after propDelay;
 				memaddr_mux <= "00" after propDelay;
 
 				-- Clocks:
@@ -216,7 +217,7 @@ begin
 				regfile_index <= destination after propDelay;
 				regfile_readnotwrite <= '0' after propDelay;
 
-				pc_mux <= '0' after propDelay;
+				pc_mux <= "00" after propDelay;
 
 				regfile_clk <= '1' after propDelay;
 				ir_clk <= '0' after propDelay;
@@ -246,7 +247,7 @@ begin
 				end if;
         			state := 1; 
 			when 9 =>
-				pc_mux <= '0' after propDelay;
+				pc_mux <= "00" after propDelay;
 				pc_clk <= '1' after propDelay;
 
 				-- everything else low:
@@ -292,7 +293,7 @@ begin
 
 				-- Multiplexers:
 				memaddr_mux <= "00" after propDelay;
-				pc_mux <= '1' after propDelay;
+				pc_mux <= "01" after propDelay;
 
 				-- Clocks:
 				regfile_clk <= '1' after propDelay;
@@ -374,9 +375,21 @@ begin
 				regfile_readnotwrite <= '1' after propDelay;
 				mem_readnotwrite <= '0' after propDelay;
 				regfile_index <= operand1 after propDelay;
+
 				-- Multiplexers:
+				memaddr_mux <= "00" after propDelay;
+				pc_mux <= "01" after propDelay;
 
 				-- Clocks:
+				regfile_clk <= '1' after propDelay;
+				mem_clk <= '1' after propDelay;
+				pc_clk <= '1' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
 
 				state := 1;
 			
@@ -393,6 +406,16 @@ begin
 				state := 1;
 
 			when 19 =>
+				pc_mux <= "00" after propDelay;
+				pc_clk <= '1' after propDelay;
+				regfile_clk <= '0' after propDelay;
+				mem_clk <= '0' after propDelay;
+				ir_clk <= '0' after propDelay;
+				imm_clk <= '0' after propDelay;
+				addr_clk <= '0' after propDelay;
+				op1_clk <= '0' after propDelay;
+				op2_clk <= '0' after propDelay;
+				result_clk <= '0' after propDelay;
 
 				state := 1;
 			when others => null; 
